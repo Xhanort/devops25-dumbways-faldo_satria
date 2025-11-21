@@ -44,7 +44,7 @@ Nah, kalau ini versi modern-nya, ibarat cucunya SH. Ini yang sekarang kita pakai
 ## 3. Catatan Command Linux (Cheat Sheet)
 Ini adalah rangkuman command Linux yang sudah saya coba dan menurut saya penting untuk diingat:
 
-### 📂 Utak-atik File & Folder
+### 📂 Konfigurasi File & Folder
 | Command | Fungsi |
 | :--- | :--- |
 | `pwd` | Cek kita lagi ada di folder mana sekarang (*Print Working Directory*). |
@@ -70,7 +70,7 @@ Ini adalah rangkuman command Linux yang sudah saya coba dan menurut saya penting
 | `curl ifconfig.me` | Cek IP Public internet kita lewat terminal. |
 | `netstat -tuln` | Cek "pintu" (port) mana aja yang lagi kebuka di server. |
 
-### 📊 Monitoring (Nilai Plus ++)
+### 📊 Monitoring 
 | Command | Fungsi |
 | :--- | :--- |
 | `htop` | Task manager yang tampilannya keren buat pantau CPU & RAM real-time. |
