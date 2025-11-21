@@ -1,8 +1,5 @@
 # Tugas Day 2 - Basic Shell & Networking
 
-**Nama:** Faldo Satria
-**Batch:** 25 - DumbWays
-
 ---
 
 ## 1. Diagram Jaringan (CIDR /28)
@@ -34,7 +31,7 @@ Ini adalah versi modern dan penyempurnaan dari SH. Ini yang biasa kita pakai di 
 * **Fitur:** Kaya fitur. Bisa *auto-complete* perintah (tekan Tab), ada warna teks, dan menyimpan riwayat perintah (History).
 * **Kelebihan:** Lebih ramah pengguna (user-friendly) dan lebih enak dipakai untuk *scripting* yang kompleks.
 
-> **Kesimpulan Singkat:** BASH adalah versi upgrade dari SH yang lebih pintar dan nyaman dipakai sehari-hari.
+> **Kesimpulannya adalah BASH adalah versi upgrade dari SH yang lebih pintar dan nyaman dipakai sehari-hari.
 
 ---
 
