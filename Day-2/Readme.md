@@ -3,71 +3,77 @@
 ---
 
 ## 1. Diagram Jaringan (CIDR /28)
-Berikut adalah desain topologi jaringan dengan aturan **CIDR 192.168.11.0/28**.
+Di tugas ini, saya merancang topologi jaringan sederhana menggunakan **CIDR 192.168.11.0/28**.
 
-Karena menggunakan subnet mask **/28**, maka total IP yang tersedia hanya **16 IP** (Host yang bisa dipakai hanya 14, dari `.1` sampai `.14`).
+Karena aturannya pakai subnet mask **/28**, berarti jatah IP-nya cukup terbatas. Total cuma ada **16 IP**, dan yang efektif bisa dipakai buat device cuma **14 IP** (mulai dari `.1` sampai `.14`).
 
-### Detail Konfigurasi Device:
+### Detail Setup Device:
+Berikut adalah pembagian IP yang saya buat untuk 4 device tersebut:
+
+<img src="https://github.com/user-attachments/assets/df03d677-3aa2-4e6a-832c-2a03d87a42f5" width="600" alt="Diagram Jaringan" />
+
+---
+
 | Device Name | IP Address | Subnet Mask | Keterangan |
 | :--- | :--- | :--- | :--- |
-| **Router / Gateway** | `192.168.11.1` | `255.255.255.240` | Gerbang utama jaringan |
-| **Server Utama** | `192.168.11.2` | `255.255.255.240` | Linux Ubuntu Server |
-| **Client Laptop A** | `192.168.11.3` | `255.255.255.240` | User Admin |
-| **Client Laptop B** | `192.168.11.4` | `255.255.255.240` | User Staff |
+| **Router / Gateway** | `192.168.11.1` | `255.255.255.240` | Pintu gerbang utama jaringan |
+| **Server Utama** | `192.168.11.2` | `255.255.255.240` | Menggunakan OS Ubuntu Server |
+| **Client Laptop A** | `192.168.11.3` | `255.255.255.240` | Dipakai oleh Admin |
+| **Client Laptop B** | `192.168.11.4` | `255.255.255.240` | Dipakai oleh Staff |
 
 ---
 
-## 2. Perbedaan SH dan BASH
-Berikut adalah perbedaan antara SH (Shell) dan BASH (Bourne-Again Shell) berdasarkan pemahaman saya:
+## 2. Apa Bedanya SH dan BASH?
+Dari yang saya pelajari, ini perbedaan mendasar antara keduanya:
 
 ### SH (Shell)
-Ini adalah versi "nenek moyang" atau versi klasik dari command line di Unix.
-* **Fitur:** Sangat dasar dan minim fitur.
-* **Kelemahan:** Tidak ada fitur canggih seperti *auto-complete* (tab) atau history command (panah atas).
-* **Kegunaan:** Biasanya hanya dipakai untuk script sistem yang sangat basic agar bisa jalan di semua mesin unix lama.
+Bisa dibilang ini versi "jadul" atau versi klasik dari command line di Unix/Linux.
+* **Kondisi:** Fiturnya bener-bener dasar banget.
+* **Kekurangan:** Agak kaku dipakainya. Kita gak bisa tekan tombol `Tab` buat *auto-complete* command, dan gak bisa tekan panah atas buat cari history command.
+* **Penggunaan:** Biasanya cuma dipakai buat script sistem yang simpel banget supaya bisa jalan di mesin-mesin tua.
 
 ### BASH (Bourne-Again Shell)
-Ini adalah versi modern dan penyempurnaan dari SH. Ini yang biasa kita pakai di Ubuntu saat ini.
-* **Fitur:** Kaya fitur. Bisa *auto-complete* perintah (tekan Tab), ada warna teks, dan menyimpan riwayat perintah (History).
-* **Kelebihan:** Lebih ramah pengguna (user-friendly) dan lebih enak dipakai untuk *scripting* yang kompleks.
+Nah, kalau ini versi modern-nya, ibarat cucunya SH. Ini yang sekarang kita pakai sehari-hari di Ubuntu.
+* **Kelebihan:** Fiturnya udah lengkap dan memanjakan pengguna.
+* **Kenapa enak:** Kita bisa tekan `Tab` kalau malas ngetik panjang (auto-complete), tampilannya ada warnanya, dan history command tersimpan rapi.
 
-> **Kesimpulannya adalah BASH adalah versi upgrade dari SH yang lebih pintar dan nyaman dipakai sehari-hari.
+> **Singkatnya** BASH itu versi *upgrade* dari SH yang jauh lebih pinter dan nyaman buat kerja sehari-hari.
 
 ---
 
-## 3. Linux Command Cheat Sheet
-Berikut adalah daftar perintah Linux yang saya pelajari (termasuk beberapa command untuk monitoring & networking):
+## 3. Catatan Command Linux (Cheat Sheet)
+Ini adalah rangkuman command Linux yang sudah saya coba dan menurut saya penting untuk diingat:
 
-### 📂 File & Directory Management
+### 📂 Utak-atik File & Folder
 | Command | Fungsi |
 | :--- | :--- |
-| `pwd` | Melihat posisi folder kita sekarang (*Print Working Directory*). |
-| `ls -lah` | Melihat daftar file secara detail (termasuk file tersembunyi). |
-| `mkdir -p folder/baru` | Membuat folder sekaligus sub-foldernya. |
-| `rm -rf <nama>` | Menghapus folder beserta isinya secara paksa (Hati-hati!). |
-| `cp -r <asal> <tujuan>` | Meng-copy folder dan isinya. |
-| `cat <file>` | Membaca isi file teks langsung di terminal. |
+| `pwd` | Cek kita lagi ada di folder mana sekarang (*Print Working Directory*). |
+| `ls -lah` | Lihat isi folder secara detail (file tersembunyi juga kelihatan). |
+| `mkdir -p folder/baru` | Bikin folder baru (bisa langsung bikin folder di dalamnya). |
+| `rm -rf <nama>` | Hapus folder beserta isinya secara paksa (Harus hati-hati pakainya!). |
+| `cp -r <asal> <tujuan>` | Copy folder dan seluruh isinya ke tempat lain. |
+| `cat <file>` | Intip isi file teks langsung lewat terminal. |
 
-### 🔧 System & Permissions
+### 🔧 Izin Akses & System
 | Command | Fungsi |
 | :--- | :--- |
-| `chmod 777 <file>` | Memberikan hak akses penuh (Read, Write, Execute) ke file. |
-| `chown user:group <file>` | Mengubah pemilik file. |
-| `sudo su` | Masuk sebagai Super User (Root). |
-| `history` | Melihat riwayat perintah yang pernah kita ketik. |
+| `chmod 777 <file>` | Kasih izin full akses (baca, tulis, eksekusi) ke file tersebut. |
+| `chown user:group <file>` | Ganti pemilik file. |
+| `sudo su` | Masuk ke mode "Dewa" (Root User). |
+| `history` | Lihat jejak command apa aja yang pernah kita ketik sebelumnya. |
 
-### 🌐 Networking (Jaringan)
+### 🌐 Networking (Cek Jaringan)
 | Command | Fungsi |
 | :--- | :--- |
-| `ping google.com` | Cek koneksi internet. |
-| `ip a` | Melihat IP Address komputer kita (pengganti `ifconfig`). |
-| `curl ifconfig.me` | Cek IP Public kita lewat terminal. |
-| `netstat -tuln` | Melihat port mana saja yang sedang terbuka/jalan. |
+| `ping google.com` | Tes koneksi internet jalan atau nggak. |
+| `ip a` | Cek IP Address di komputer sendiri. |
+| `curl ifconfig.me` | Cek IP Public internet kita lewat terminal. |
+| `netstat -tuln` | Cek "pintu" (port) mana aja yang lagi kebuka di server. |
 
-### 📊 Monitoring (Nilai ++)
+### 📊 Monitoring (Nilai Plus ++)
 | Command | Fungsi |
 | :--- | :--- |
-| `htop` | Task manager interaktif (lebih bagus dari `top`) untuk lihat RAM/CPU. |
-| `df -h` | Cek sisa kapasitas Hardisk (*Disk Free*). |
+| `htop` | Task manager yang tampilannya keren buat pantau CPU & RAM real-time. |
+| `df -h` | Cek sisa kapasitas Hardisk. |
 | `free -m` | Cek sisa RAM yang tersedia. |
-| `grep "kata" <file>` | Mencari kata tertentu di dalam file (sangat berguna buat cari error di log). |
+| `grep "kata" <file>` | Cari kata spesifik di dalam file (berguna banget buat cari error di log). |
