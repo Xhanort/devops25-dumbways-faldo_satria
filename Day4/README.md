@@ -1,0 +1,1 @@
+Git adalah sistem pengontrol versi (Version Control System) yang digunakan untuk melacak perubahan pada file komputer. Git memudahkan programmer bekerja sama karena bisa melihat siapa mengubah apa, dan bisa kembali ke versi kode sebelumnya jika terjadi error.
