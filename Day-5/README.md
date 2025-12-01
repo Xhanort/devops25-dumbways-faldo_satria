@@ -31,5 +31,4 @@ Tugas ini bertujuan untuk men-deploy tiga aplikasi dengan bahasa pemrograman ber
 
 ---
 
-nd
-pm2 start npm --name "wayshub-frontend" -- start
+
