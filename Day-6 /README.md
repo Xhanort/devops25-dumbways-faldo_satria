@@ -37,3 +37,7 @@ server {
         proxy_pass [http://192.168.1.100:3000]
     }
 }
+```
+Hasilnya adalah berikut
+
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/bc0f8ecd-c433-4807-8ad6-7b453f3b0162" />
